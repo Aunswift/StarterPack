@@ -1,0 +1,100 @@
+import java.util.Scanner;
+
+public class EndeksDuzen {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+            {
+                System.out.print("Lütfen kilonuzu giriniz: ");
+                double kilo = scanner.nextDouble();
+                scanner.nextLine();
+
+                System.out.print("Lütfen boyunuzu giriniz: ");
+                double boyin = scanner.nextDouble();
+                scanner.nextLine();
+                if((boyin>3))
+                    {
+                        double boyover = boyin/100;
+                        double endeksover = kilo / (boyover*boyover);
+
+                        System.out.println("Endeks değeriniz: " + endeksover);
+                        
+                        System.out.print("Lütfen desteklediğiniz siyasi partinin kısatlmasını giriniz: ");
+                        String secimover = scanner.nextLine();
+
+                        boolean cevap1 = secimover.equalsIgnoreCase("AKP");
+                        boolean cevap2 = secimover.equalsIgnoreCase("MHP");
+
+                        if((!cevap1) && (!cevap2)) //Cevap AKP veya MHP değilse
+                            {
+                                System.out.println("Milletin duygularını sömüren bir partiyi "
+                                + "desteklelemediğiniz için teşekkür ederim." +
+                                " Sonuçlarınızın ne anlama geldiğini açıklayacağım.");
+                                if((endeksover < 18.49))
+                                    {
+                                        System.out.println("Vücut kilonuzun çok altındasınız. Biraz kilo almayı deneyin.");
+                                    }
+                                if((25 > endeksover) && (endeksover >= 18.5))
+                                    {
+                                        System.out.println("İdeal vücut ağırlığındasınız.");
+                                    }
+                                if((endeksover >= 25) && (30 > endeksover))
+                                    {
+                                        System.out.println("İdeal kilonuzun üzerindesiniz. Biraz zayıflayabilirsiniz.");
+                                    }
+                                if((endeksover >= 30))
+                                    {
+                                        System.out.println("İdeal kilonuzun çok üzerindesiniz. Zayıfamalısınız.");
+                                    }
+                            }
+                        if((cevap1) || (cevap2))
+                            System.out.println("Üzgünüm, milletin duygularını ve parasını çalan"
+                            + " birini desteklediğiniz için sizin sonucunuzu "
+                            + "hesaplamayacağım. Lütfen programı terk edin."
+                            + " ya da ben atarım.");
+                    }
+                    else //boy 100'den küçükse
+                    {
+                        double endeks3 = kilo / (boyin*boyin);
+                        System.out.println("Endeks değeriniz: " + endeks3);
+                        System.out.print("Eğer ki ne anlama geldiğini öğrenmek istiyorsanız ");
+                        System.out.print("lütfen desteklediğiniz siyasi partinin kısatlmasını giriniz: ");
+                        String korku = scanner.nextLine();
+
+                        boolean korku1 = korku.equalsIgnoreCase("AKP");
+                        boolean korku2 = korku.equalsIgnoreCase("MHP");
+
+                        if((!korku1) && (!korku2))
+                            {
+                                System.out.println("Milletin duygularını sömüren bir partiyi "
+                                + "desteklelemediğiniz için teşekkür ederim." +
+                                " Sonuçlarınızın ne anlama geldiğini açıklayacağım.");
+                                if((endeks3 < 18.49))
+                                    {
+                                        System.out.println("Vücut kilonuzun çok altındasınız. Biraz kilo almayı deneyin.");
+                                    }
+                                if((25 > endeks3) && (endeks3 >= 18.5))
+                                    {
+                                        System.out.println("İdeal vücut ağırlığındasınız.");
+                                    }
+                                if((endeks3 >= 25) && (30 > endeks3))
+                                    {
+                                        System.out.println("İdeal kilonuzun üzerindesiniz. Biraz zayıflayabilirsiniz.");
+                                    }
+                                if((endeks3 >= 30))
+                                    {
+                                        System.out.println("İdeal kilonuzun çok üzerindesiniz. Zayıfamalısınız.");
+                                    }
+                                System.out.println("Programa katıldığınız ve milleti sömüren "
+                                + "birini desteklemediğiniz için teşekkürler. Kendinize iyi bakın."
+                                + " Unutmayın, bize kurtarılmaya mahkum bir ülke bırakacaklar.");
+                            }
+                        if((korku1) || (korku2))
+                            System.out.println("Üzgünüm, milletin duygularını ve parasını çalan"
+                            + " birini desteklediğiniz için sizin sonucunuzu "
+                            + "hesaplamayacağım. Lütfen programı terk edin."
+                            + " ya da ben atarım.");
+                    }
+                }
+            }
+}
